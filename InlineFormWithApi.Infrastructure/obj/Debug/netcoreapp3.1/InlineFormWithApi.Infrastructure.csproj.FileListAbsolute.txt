@@ -1,0 +1,11 @@
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\bin\Debug\netcoreapp3.1\InlineFormWithApi.Domain.dll
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\obj\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.csprojAssemblyReference.cache
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\obj\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\obj\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.AssemblyInfo.cs
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\bin\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.deps.json
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\bin\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.dll
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\bin\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.pdb
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\bin\Debug\netcoreapp3.1\InlineFormWithApi.Domain.pdb
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\obj\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.csproj.CopyComplete
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\obj\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.dll
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Infrastructure\obj\Debug\netcoreapp3.1\InlineFormWithApi.Infrastructure.pdb

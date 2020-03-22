@@ -1,0 +1,46 @@
+
+<button  (click)="addNewRecord()">Add New </button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"  colspan="2">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngIf="enebleAdd">
+      <ng-container [formGroup]="newUserForm">
+        <td colspan="2">
+           <input class="form-control form-input" type="text" placeholder="First Name" [formControl]="newUserForm.controls['FirstName']">
+          <div *ngIf="newUserForm.controls['FirstName'].hasError('required') && newUserForm.controls['FirstName'].touched" class="alert alert-danger">Required field.</div>
+          <input class="form-control form-input" type="text" placeholder="Second Name" [formControl]="newUserForm.controls['SecondName']">
+          <div *ngIf="newUserForm.controls['SecondName'].hasError('required') && newUserForm.controls['SecondName'].touched" class="alert alert-danger">Required field.</div>
+        </td>
+        <td>
+          <input class="form-control form-input" type="number" placeholder="Age" [formControl]="newUserForm.controls['Age']">
+         <div *ngIf="newUserForm.controls['Age'].hasError('required') && newUserForm.controls['Age'].touched" class="alert alert-danger">Required field.</div>
+        </td>
+        <td>
+          <input type="file" [formControl]="newUserForm.controls['Photo']" (change)="onSelectFile($event)" >
+        </td>
+        <td>
+          <button type="button" (click)="onSubmit(newUserForm)">Save</button>
+          <button type="button" (click)="onCancelClick()">Cancel</button>
+
+        </td>
+      </ng-container>
+
+    </tr>
+    <tr *ngFor="let item of userList">
+
+   <td>{{ item.firstName + ' ' + item.secondName }}</td>
+   <td>{{ item.age }}</td>
+   <td><a (click)="downloadImage(item.photoGuidId,item.imageFileType)" >{{item.photoGuidId}}</a> </td>
+    </tr>
+    </tbody>
+    </table>
+
+
+

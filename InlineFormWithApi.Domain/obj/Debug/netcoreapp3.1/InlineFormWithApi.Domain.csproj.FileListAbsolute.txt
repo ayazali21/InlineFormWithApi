@@ -1,0 +1,8 @@
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\bin\Debug\netcoreapp3.1\InlineFormWithApi.Domain.deps.json
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\bin\Debug\netcoreapp3.1\InlineFormWithApi.Domain.dll
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\bin\Debug\netcoreapp3.1\InlineFormWithApi.Domain.pdb
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\obj\Debug\netcoreapp3.1\InlineFormWithApi.Domain.csprojAssemblyReference.cache
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\obj\Debug\netcoreapp3.1\InlineFormWithApi.Domain.AssemblyInfoInputs.cache
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\obj\Debug\netcoreapp3.1\InlineFormWithApi.Domain.AssemblyInfo.cs
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\obj\Debug\netcoreapp3.1\InlineFormWithApi.Domain.dll
+C:\Users\ayaza\source\repos\InlineFormWithApi\InlineFormWithApi.Domain\obj\Debug\netcoreapp3.1\InlineFormWithApi.Domain.pdb
