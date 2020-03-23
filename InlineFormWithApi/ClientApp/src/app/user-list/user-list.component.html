@@ -1,46 +1,123 @@
+<button
+  type="button"
+  class="btn-primary"
+  style="margin-bottom: .2em;"
+  (click)="addNewRecord()"
+>
+  Add New
+</button>
+<div class="container grid-striped">
+  <div class="row">
+    <div class="col-sm-6">
+      <h5>Name</h5>
+    </div>
+    <div class="col-sm-3">
+      <h5>Age</h5>
+    </div>
+    <div class="col-sm-3">
+      <h5>Photo</h5>
+    </div>
+  </div>
 
-<button  (click)="addNewRecord()">Add New </button>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col"  colspan="2">Name</th>
-      <th scope="col">Age</th>
-      <th scope="col">Photo</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="row" *ngIf="enebleAdd">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control form-input"
+            placeholder="First Name"
+            [formControl]="newUserForm.controls['FirstName']"
+          />
+          <div
+            *ngIf="
+              (newUserForm.controls['SecondName'].hasError('required') &&
+                newUserForm.controls['SecondName'].touched) ||
+              (newUserForm.controls['FirstName'].hasError('required') &&
+                newUserForm.controls['FirstName'].touched)
+            "
+            class="alert alert-danger"
+          >
+            Required field.
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control form-input"
+            placeholder="Second Name"
+            [formControl]="newUserForm.controls['SecondName']"
+          />
+          <div
+            *ngIf="
+              (newUserForm.controls['SecondName'].hasError('required') &&
+                newUserForm.controls['SecondName'].touched) ||
+              (newUserForm.controls['FirstName'].hasError('required') &&
+                newUserForm.controls['FirstName'].touched)
+            "
+            class="alert alert-danger"
+          >
+            Required field.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <input
+        class="form-control form-input"
+        type="number"
+        placeholder="Age"
+        [formControl]="newUserForm.controls['Age']"
+      />
+      <div
+        *ngIf="
+          newUserForm.controls['Age'].hasError('required') &&
+          newUserForm.controls['Age'].touched
+        "
+        class="alert alert-danger"
+      >
+        Required field.
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <input
+        type="file"
+        [formControl]="newUserForm.controls['Photo']"
+        (change)="onSelectFile($event)"
+      />
+    </div>
+    <div class="col-sm-12" style="text-align: right;padding: .2em;">
+      <button
+        type="button"
+        style="margin-right: .2em;"
+        class="btn btn-primary"
+        (click)="onSubmit(newUserForm)"
+      >
+        Save
+      </button>
+      <button type="button" class="btn btn-primary" (click)="onCancelClick()">
+        Cancel
+      </button>
+    </div>
+  </div>
 
-    <tr *ngIf="enebleAdd">
-      <ng-container [formGroup]="newUserForm">
-        <td colspan="2">
-           <input class="form-control form-input" type="text" placeholder="First Name" [formControl]="newUserForm.controls['FirstName']">
-          <div *ngIf="newUserForm.controls['FirstName'].hasError('required') && newUserForm.controls['FirstName'].touched" class="alert alert-danger">Required field.</div>
-          <input class="form-control form-input" type="text" placeholder="Second Name" [formControl]="newUserForm.controls['SecondName']">
-          <div *ngIf="newUserForm.controls['SecondName'].hasError('required') && newUserForm.controls['SecondName'].touched" class="alert alert-danger">Required field.</div>
-        </td>
-        <td>
-          <input class="form-control form-input" type="number" placeholder="Age" [formControl]="newUserForm.controls['Age']">
-         <div *ngIf="newUserForm.controls['Age'].hasError('required') && newUserForm.controls['Age'].touched" class="alert alert-danger">Required field.</div>
-        </td>
-        <td>
-          <input type="file" [formControl]="newUserForm.controls['Photo']" (change)="onSelectFile($event)" >
-        </td>
-        <td>
-          <button type="button" (click)="onSubmit(newUserForm)">Save</button>
-          <button type="button" (click)="onCancelClick()">Cancel</button>
-
-        </td>
-      </ng-container>
-
-    </tr>
-    <tr *ngFor="let item of userList">
-
-   <td>{{ item.firstName + ' ' + item.secondName }}</td>
-   <td>{{ item.age }}</td>
-   <td><a (click)="downloadImage(item.photoGuidId,item.imageFileType)" >{{item.photoGuidId}}</a> </td>
-    </tr>
-    </tbody>
-    </table>
-
-
-
+  <div class="row" *ngFor="let item of userList">
+    <div class="col-sm-6">
+      {{ item.firstName + " " + item.secondName }}
+    </div>
+    <div class="col-sm-3">
+      {{ item.age }}
+    </div>
+    <div class="col-sm-3">
+      <button
+        style="margin:.2em"
+        *ngIf="item.photoGuidId !== undefined && item.photoGuidId !== ''"
+        (click)="downloadImage(item.photoGuidId, item.imageFileType)"
+        class="btn btn-primary"
+        type="button"
+      >
+        Photo
+      </button>
+    </div>
+  </div>
+</div>

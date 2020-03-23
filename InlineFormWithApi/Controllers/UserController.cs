@@ -34,12 +34,14 @@ namespace InlineFormWithApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    string photoGuid = Guid.NewGuid().ToString();
+                    string photoGuid = string.Empty;
+                    string extension = string.Empty;
                     // Saving Image on Server
-                    if (model.Photo.Length > 0)
+                    if (model.Photo?.Length > 0)
                     {
+                        photoGuid = Guid.NewGuid().ToString();
                         var image = model.Photo;
-                        string extension = Path.GetExtension(image.FileName);
+                        extension = Path.GetExtension(image.FileName);
 
                         var filePath = Path.Combine("wwwroot/images", $"{photoGuid}.{extension}");
 
@@ -47,10 +49,9 @@ namespace InlineFormWithApi.Controllers
                         {
                             image.CopyTo(fileStream);
                         }
-
-                        var userDetails = new UserDetails(model.FirstName, model.SecondName, model.Age, photoGuid,extension);
-                        userDetailRepository.Add(userDetails);
                     }
+                    var userDetails = new UserDetails(model.FirstName, model.SecondName, model.Age, photoGuid, extension);
+                    userDetailRepository.Add(userDetails);
                     return Ok("success");
                 }
                 else
